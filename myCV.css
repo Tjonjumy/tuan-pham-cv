@@ -582,7 +582,7 @@ footer p{
     }
     .bar-button{
         position: fixed;
-        top:20px;
+        top:0px;
         left:0px;
         cursor: pointer;
         padding:3px 6px;
