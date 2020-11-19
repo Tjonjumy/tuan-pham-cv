@@ -16,8 +16,12 @@ function writeName(txt,selector){
   }
   
 }
-setInterval(writeName,150,"I'm Tuan Pham",siteName);
-setInterval(writeName,150,'a fresher front-end developer',siteslogan);
+function loadWriteName(){
+  if(document.documentElement.scrollTop==0){
+    setInterval(writeName,150,"I'm Tuan Pham",siteName);
+    setInterval(writeName,150,'a fresher front-end developer',siteslogan);  
+  }
+}
 
 //Make Circle text
 function circularText(txt, radius, classIndex) {
@@ -86,6 +90,7 @@ toTop.addEventListener('mouseover',()=>{
 });
 let deg=0;
 window.onscroll=function(){
+  loadWriteName();
   //Rotate toTop
   deg=document.documentElement.scrollTop ? document.documentElement.scrollTop/5 : document.body.scrollTop/5;
   toTop.style.transform=`rotate(${deg}deg)`;
@@ -133,5 +138,6 @@ window.onload=()=>{
   if(document.documentElement.scrollTop<contentsOffsetTop[1]){
     liItemsArr[0].classList.add('active');
   }
+  loadWriteName();
 };
 

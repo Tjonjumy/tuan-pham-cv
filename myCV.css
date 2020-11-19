@@ -426,18 +426,18 @@
     width: 100%;
     height: auto;
     border:1px solid #fff;
-    transform: perspective(1000px) rotateX(90deg); 
-    transition: 0.7s ease-in-out;
+    /* transform: perspective(1000px) rotateX(90deg); 
+    transition: 0.7s ease-in-out; */
 }
 .content.loadweb .mypoject:last-child img{
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 .content.loadweb .mypoject img{
     transform: perspective(1000px) rotate(0deg);
 }
 @keyframes perspevtive{
-    from{transform: perspective(1000px) rotate(90deg)}
-    to{transform: perspective(1000px) rotate(0)}
+    0%{transform: perspective(1000px) rotate(90deg)}
+    100%{transform: perspective(1000px) rotate(0)}
 }
 .mypoject span{
     display: inline-block;
@@ -659,4 +659,19 @@ footer p{
        font-size:20px; 
     }
     
+}
+
+.content.loadweb .hobbies .hobbie-img:nth-child(odd){
+    
+    animation: imgRight 1s linear forwards;
+}
+.content.loadweb .hobbies .hobbie-img:nth-child(even){
+   
+    animation: imgLeft 1s linear forwards;
+}
+.content.loadweb .hobbies .hobbie-img:nth-child(n+3){
+    animation-delay:0.4s;
+}
+.content.loadweb .hobbies .hobbie-img:nth-child(n+5){
+    animation-delay:0.9s;
 }
