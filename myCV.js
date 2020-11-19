@@ -95,8 +95,14 @@ window.onscroll=function(){
   else{
     toTop.style.opacity=0;
   }
+  // Effect scroll to background image of banner
+  const bannerBgr=document.querySelector('.banner');
+  if(document.documentElement.scrollTop<window.innerHeight){
+    window.innerHeight<=625?bannerBgr.style.backgroundPosition=`50% -${document.documentElement.scrollTop/3}px`:
+    bannerBgr.style.backgroundPosition=`50% -${document.documentElement.scrollTop/5}px`;
+  }
   //Add .active class for each item of menu
-  for(let i=0;i<liItemsArrL-1;i++){
+  for(let i=1;i<liItemsArrL-1;i++){
     if(document.documentElement.scrollTop<contentsOffsetTop[i+1]-100
       && document.documentElement.scrollTop>=contentsOffsetTop[i]-100){
       liItemsArr[i].classList.add('active');
@@ -109,7 +115,7 @@ window.onscroll=function(){
         contentsArr[i].classList.add('loadweb');
       }
   }
-  if(document.documentElement.offsetHeight<=window.innerHeight+document.documentElement.scrollTop){
+  if(document.documentElement.offsetHeight<=window.innerHeight+document.documentElement.scrollTop+1){
     liItemsArr[liItemsArrL-1].classList.add('active');
     liItemsArr[liItemsArrL-2].classList.remove('active');
   }
