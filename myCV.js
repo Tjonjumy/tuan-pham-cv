@@ -98,8 +98,8 @@ window.onscroll=function(){
   // Effect scroll to background image of banner
   const bannerBgr=document.querySelector('.banner');
   if(document.documentElement.scrollTop<window.innerHeight){
-    window.innerHeight<=625?bannerBgr.style.backgroundPosition=`50% -${document.documentElement.scrollTop/3}px`:
-    bannerBgr.style.backgroundPosition=`50% -${document.documentElement.scrollTop/5}px`;
+    window.innerHeight<=625?bannerBgr.style.backgroundPosition=`50% -${document.documentElement.scrollTop/2}px`:
+    bannerBgr.style.backgroundPosition=`50% -${document.documentElement.scrollTop/4}px`;
   }
   //Add .active class for each item of menu
   for(let i=1;i<liItemsArrL-1;i++){
