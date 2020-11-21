@@ -39,7 +39,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(26, 188, 156,0.8);
-    z-index: 1 ;
 }
 .banner >div{
     z-index: 1;
@@ -552,7 +551,7 @@ footer p{
         flex: 100%;
     }
 }
-@media screen and (max-width: 992px) and (min-width: 320px){
+@media screen and (max-width: 992px){
     .banner .site-name h1{ 
         font-size: 35px;   
     }
