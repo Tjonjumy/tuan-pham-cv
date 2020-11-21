@@ -89,10 +89,11 @@ toTop.addEventListener('mouseover',()=>{
   toTop.style.opacity=1;
 });
 let deg=0;
-let docScrollTop=document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
+let docScrollTop;
 window.onscroll=function(){
   loadWriteName();
   //Rotate toTop
+  docScrollTop=document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
   deg=docScrollTop/5;
   toTop.style.transform=`rotate(${deg}deg)`;
   if(docScrollTop>=20){
@@ -136,6 +137,7 @@ function topFunction(){
   document.documentElement.scrollTop=0; // For Chrome, Firefox, IE and Opera
 }
 window.onload=()=>{
+  docScrollTop=document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
   if(docScrollTop<contentsOffsetTop[1]){
     liItemsArr[0].classList.add('active');
   }
