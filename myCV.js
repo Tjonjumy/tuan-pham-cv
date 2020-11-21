@@ -89,38 +89,39 @@ toTop.addEventListener('mouseover',()=>{
   toTop.style.opacity=1;
 });
 let deg=0;
+let docScrollTop=document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
 window.onscroll=function(){
   loadWriteName();
   //Rotate toTop
-  deg=document.documentElement.scrollTop ? document.documentElement.scrollTop/5 : document.body.scrollTop/5;
+  deg=docScrollTop/5;
   toTop.style.transform=`rotate(${deg}deg)`;
-  if(document.body.scrollTop>=20||document.documentElement.scrollTop>=20){
+  if(docScrollTop>=20){
     toTop.style.opacity=0.6;
   }
   else{
     toTop.style.opacity=0;
   }
-  // Effect scroll to background image of banner
+  // Creat scroll effect for background image of banner
   const bannerBgr=document.querySelector('.banner');
-  if(document.documentElement.scrollTop<window.innerHeight){
-    window.innerHeight<=625?bannerBgr.style.backgroundPosition=`50% -${document.documentElement.scrollTop/2}px`:
-    bannerBgr.style.backgroundPosition=`50% -${document.documentElement.scrollTop/4}px`;
+  if(docScrollTop<window.innerHeight){
+    window.innerHeight<=625?bannerBgr.style.backgroundPosition=`50% -${docScrollTop/2}px`:
+    bannerBgr.style.backgroundPosition=`50% -${docScrollTop/4}px`;
   }
   //Add .active class for each item of menu
   for(let i=1;i<liItemsArrL-1;i++){
-    if(document.documentElement.scrollTop<contentsOffsetTop[i+1]-100
-      && document.documentElement.scrollTop>=contentsOffsetTop[i]-100){
+    if(docScrollTop<contentsOffsetTop[i+1]-100
+      && docScrollTop>=contentsOffsetTop[i]-100){
       liItemsArr[i].classList.add('active');
     }
     else{
       liItemsArr[i].classList.remove('active');
     }
-    if(document.documentElement.scrollTop<contentsOffsetTop[i+1]
-      && document.documentElement.scrollTop>=contentsOffsetTop[i]-300){
+    if(docScrollTop<contentsOffsetTop[i+1]
+      && docScrollTop>=contentsOffsetTop[i]-300){
         contentsArr[i].classList.add('loadweb');
       }
   }
-  if(document.documentElement.offsetHeight<=window.innerHeight+document.documentElement.scrollTop+1){
+  if(document.documentElement.offsetHeight<=window.innerHeight+docScrollTop+1){
     liItemsArr[liItemsArrL-1].classList.add('active');
     liItemsArr[liItemsArrL-2].classList.remove('active');
   }
@@ -135,7 +136,7 @@ function topFunction(){
   document.documentElement.scrollTop=0; // For Chrome, Firefox, IE and Opera
 }
 window.onload=()=>{
-  if(document.documentElement.scrollTop<contentsOffsetTop[1]){
+  if(docScrollTop<contentsOffsetTop[1]){
     liItemsArr[0].classList.add('active');
   }
   loadWriteName();
