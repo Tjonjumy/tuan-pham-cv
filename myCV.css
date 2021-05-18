@@ -44,7 +44,7 @@
     z-index: 1;
 }
 .banner .site-name{
-    border-bottom: 4px double #fff;
+    /* border-bottom: 4px double #fff; */
     margin-bottom: 30px;
 }
 .banner .site-name h1{ 
@@ -65,7 +65,7 @@
     position: fixed;
     top:0;
     left: 0px;
-    background-color:#32323a;
+    background-color:#fff;
     transition: left 0.5s linear;
     z-index:9;
 }
@@ -76,7 +76,8 @@
     left:0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.8);
+    background: rgba(52, 58, 65, 0.7);
+    backdrop-filter: blur(2px);
     z-index: 8;
 }
 .layer-menu.show-layer{
@@ -88,12 +89,12 @@
     height:auto;
 }
 .sidebar-menu ul li{
-    border-bottom: 0.5px solid #3b3b44;
+    border-bottom: 0.5px solid #f0f2f5;
 }
 .sidebar-menu ul li a{
     position: relative;
     display: block;
-    color:#8c8c8c;
+    color:#5a7391;
     text-align: center;
     font-size: 16px;
     letter-spacing: 3px;
@@ -105,7 +106,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #222227;
+    background-color: #d9e7f3;
     position: absolute;
     bottom: 0;
     right: 100%;
@@ -168,7 +169,7 @@
     color: #fff;
 }
 .to-top:hover .circle-inner{
-    color:red;
+    color:#428bca;
 }
 
 /* MAIN CONTENT */
@@ -181,10 +182,11 @@
 }
 .main-container section{
     overflow: hidden;
+    margin: 20px 0 10px;
 }
 .main-container h2{
-    margin: 20px 0;
-    font-size:25px;
+    margin: 20px 0 10px;
+    font-size:20px;
 }
 .main-container h3{
     margin: 10px 0;
@@ -204,7 +206,7 @@
 .content .skill{
     display: block;
     width: 100%;
-    height: 20px;
+    height: 15px;
     background-color: #fff;
     border-radius: 10px;
 }
@@ -213,8 +215,8 @@
     content: "";
     height: 100%;
     width:20px;
-    border-radius: 10px;
-    background:lightgreen;
+    border-radius: 7.5px;
+    background:#428bca;
     transition:width 1s ease-in-out;
 }
 .content.loadweb .html::after,.content.loadweb .css::after{
@@ -223,7 +225,7 @@
 .content.loadweb .js::after{
     width: 60%;
 }
-.content.loadweb .ai::after{
+.content.loadweb .ai::after, .content.loadweb .git::after, .content.loadweb .angular::after, .content.loadweb .backend::after{
     width: 35%;
 }
 .about-me .download-cv{
@@ -233,21 +235,22 @@
 }
 .about-me .download-cv button{
     height: 30px;
-    padding: 0 20px;
-    border-radius: 20px;
-    font-size: 18px;
+    padding: 0 10px;
+    border-radius: 5px;
     line-height: 30px;
-    font-weight: 600;
     text-align: center;
     cursor: pointer;
-    color: #fff;
-    background-color: #000;
-    border: 1px solid #fff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2),-2px -2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border: 1px solid #000;
 }
 .about-me .download-cv button:hover{
-    color:cyan;
-    box-shadow:1px 1px 5px #33ffff,0 0 5px #66ffff;
+    color:#428bca;
+    background-color: #b4d4f0;
+    border: none;
+}
+.about-me .download-cv button:active{
+    color:#428bca;
+    background-color: #cee2f3;
 }
 /* WORK EXPERIENCE */
 .work-exp .job,.education {
@@ -264,7 +267,9 @@
     position: relative;
     text-align: center;
     background-color:#fff;
-    height:110px;
+    height:130px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 .work-exp .job .major-duties,.education .major-duties{
     padding: 0 15px;
@@ -276,7 +281,7 @@
     color: ;
     margin: 0;
 }
-.work-exp .job .major-duties  span,.education .major-duties span{
+.work-exp .job .major-duties  span,.education .major-duties span, a{
     color:#777;
     font-size: 18px;
 }
@@ -284,7 +289,6 @@
     width: 30%;
     height:100%;
     object-fit: contain;
-    float:left;
 }
 .time-exp span{
     width: 70%;
@@ -505,7 +509,7 @@
 }
 
 .contact-me .left-contact ul li:hover {
-    color:rgb(8, 148, 148);
+    color:#428bca
 }
 .contact-me .social-link{
     flex:50%;
@@ -526,7 +530,7 @@
     padding:0 20px;   
 }
 .contact-me .social-link div i:hover{
-    color:rgb(9, 136, 136);
+    color: #428bca
 }
 
 /* FOOTER */
@@ -594,9 +598,9 @@ footer p{
     }
     .bar-button  span{
         display:block;
-        margin:6px 0;
-        height:4px;
-        width:32px;
+        margin:5px 0;
+        height:2px;
+        width:24px;
         background-color:#eee;
         transition: transform 0.3s linear;
     }
@@ -608,10 +612,10 @@ footer p{
         opacity: 0;
     }
     .bar-button.activemenu .bar1{
-        transform: rotate(45deg) rotateY(180deg) translate(-7px,7px);
+        transform: rotate(45deg) rotateY(180deg) translate(-5px,4px);
     }
     .bar-button.activemenu .bar3{
-        transform: rotate(-45deg) rotateY(180deg) translate(-7px,-7px);
+        transform: rotate(-45deg) rotateY(180deg) translate(-6px,-6px);
     }
     .hobbies .hobbie-img span{
         font-size:15px;
