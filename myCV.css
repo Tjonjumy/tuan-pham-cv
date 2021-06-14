@@ -14,7 +14,6 @@
 }
 /* BANNER */
 .banner{
-    width: ;
     height: 100vh;  
     background-image: url('./img/banner.svg');
     background-repeat: no-repeat;
@@ -225,8 +224,14 @@
 .content.loadweb .js::after{
     width: 60%;
 }
-.content.loadweb .ai::after, .content.loadweb .git::after, .content.loadweb .angular::after, .content.loadweb .backend::after{
+.content.loadweb .ai::after, 
+.content.loadweb .git::after, 
+.content.loadweb .angular::after, 
+.content.loadweb .backend::after{
     width: 35%;
+}
+.content.loadweb .react::after {
+    width: 25%;
 }
 .about-me .download-cv{
     display: block;
@@ -588,7 +593,7 @@ footer p{
         top:0px;
         left:0px;
         cursor: pointer;
-        padding:3px 6px;
+        padding:0 2px;
         z-index:10;
         background-color: rgba(36, 20, 20, 0.7);
         transition: transform 0.5s linear;
